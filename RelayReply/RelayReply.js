@@ -1,6 +1,15 @@
 const { SmsClient } = require("@azure/communication-sms");
 
 module.exports = async function (context, req) {
+    const event = req.body[0];
+
+
+    // Your normal SMSReceived logic here...
+    // ...
+};
+
+
+module.exports = async function (context, req) {
     try {
         const event = req.body[0];
         const data = event.data;
@@ -9,6 +18,20 @@ module.exports = async function (context, req) {
         const from = data.from;
         const to = data.to;
         const message = data.message;
+
+        // Check for Event Grid subscription validation event
+        if (event.eventType === "Microsoft.EventGrid.SubscriptionValidationEvent") {
+            const validationCode = event.data.validationCode;
+            context.log("Subscription validation event received:", validationCode);
+
+            context.res = {
+                status: 200,
+                body: {
+                    validationResponse: validationCode
+                }
+            };
+            return; // Exit after handshake
+        }
 
         // Ignore messages sent from our own ACS number
         if (from === myNumber) {
