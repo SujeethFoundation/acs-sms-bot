@@ -1,15 +1,6 @@
 const { SmsClient } = require("@azure/communication-sms");
 
 module.exports = async function (context, req) {
-    const event = req.body[0];
-
-
-    // Your normal SMSReceived logic here...
-    // ...
-};
-
-
-module.exports = async function (context, req) {
     try {
         const event = req.body[0];
         const data = event.data;
