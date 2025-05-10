@@ -1,17 +1,12 @@
 {
-  "name": "",
+  "name": "acs-sms-bot",
   "version": "1.0.0",
-  "description": "",
-  "main": "src/functions/*.js",
+  "description": "Azure Functions for sending and relaying SMS via Azure Communication Services",
   "scripts": {
     "start": "func start",
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
-    "@azure/communication-sms": "^1.2.0-beta.3",
-    "@azure/functions": "^4.0.0"
-  },
-  "devDependencies": {
-    "azure-functions-core-tools": "^4.x"
+    "@azure/communication-sms": "^1.2.0-beta.3"
   }
 }
