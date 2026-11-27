@@ -92,3 +92,7 @@ Pushing to `main` runs the workflow in `.github/workflows/main_acs-sms-bot.yml`,
 ## License
 
 Apache-2.0. See `LICENSE`.
+
+## Platform architecture
+
+This repo is one of nine in the SujeethFoundation org. The architecture docs live in the website repo's `architecture/` folder: [platform architecture](https://github.com/SujeethFoundation/sujeethfoundation.github.io/blob/main/architecture/platform-architecture.md), [data model and portal](https://github.com/SujeethFoundation/sujeethfoundation.github.io/blob/main/architecture/platform-data-model-and-portal.md) and [business architecture](https://github.com/SujeethFoundation/sujeethfoundation.github.io/blob/main/architecture/business-architecture.md). This repo is texting through Azure Communication Services. See "acs-sms-bot" in the platform architecture doc. Each repo's README is listed in the platform architecture doc under "Repo READMEs".
